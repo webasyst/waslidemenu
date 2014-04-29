@@ -254,7 +254,7 @@
             // add 'selected' class
             base.$currentMenuElement.addClass(base.o.selectedClass);
 
-            if (base.o.loadContainer.length > 0 && $load_container.length > 0 && $.inArray(url, base.o.exludeUri) < 0 && (location.origin + url) !== window.location.href) {
+            if (base.o.loadContainer.length > 0 && $load_container.length > 0 && $.inArray(url, base.o.excludeUri) < 0 && (location.origin + url) !== window.location.href) {
                 if (base.o.loadOnlyLatest === false) {
                     base.loadContent($load_container, url);
                 } else if (base.o.loadOnlyLatest && $menu_children.length === 0 && depth > 0) {
@@ -277,6 +277,12 @@
             base.$items.off('click', 'a', base._menuDown);
 
             base.$waSlideMenu.removeClass(base.o.classNames.navigationClass);
+            if (base.o.autoHeightMenu) {
+                base.$waSlideMenu.css('height', 'initial');
+            }
+            if (base.o.minHeightMenu > 0) {
+                base.$waSlideMenu.css('min-height', 'initial');
+            }
             base.$rootMenu.removeClass(base.o.classNames.allMenusClass)
                             .prependTo(base.$waSlideMenu);
             base.$inheritedMenus.removeClass(base.o.classNames.allMenusClass + ' ' + base.o.classNames.inheritedMenuClass);
