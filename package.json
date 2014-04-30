@@ -8,7 +8,7 @@
         "slider",
         "webasyst"
     ],
-    "version": "1.0.4",
+    "version": "1.0.5",
     "author": {
         "name": "WebAsyst",
         "url": "https://github.com/webasyst"
@@ -25,6 +25,6 @@
     "docs": "https://github.com/webasyst/waslidemenu",
     "download": "https://github.com/webasyst/waslidemenu",
     "dependencies": {
-        "jquery": ">=1.8"
+        "jquery": ">=1.7"
     }
 }

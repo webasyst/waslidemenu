@@ -1,6 +1,6 @@
 /**
  * waSlideMenu - jQuery plugin for menu organization like Facebook Help Page.
- * @version v1.0.4
+ * @version v1.0.5
  * @link https://github.com/webasyst/waslidemenu
  * @license MIT
  */
