@@ -1,0 +1,35 @@
+{
+    "name": "waslidemenu",
+    "title": "jQuery waSlideMenu",
+    "description": "jQuery plugin for menu organization like Facebook Help Page.",
+    "keywords": [
+        "menu",
+        "facebook",
+        "slider",
+        "webasyst"
+    ],
+    "version": "1.0.5",
+    "author": {
+        "name": "WebAsyst",
+        "url": "https://github.com/webasyst"
+    },
+    "maintainers": [
+        {
+            "name": "Kirill Maramygin",
+            "email": "kirill.maramygin@gmail.com"
+        }
+    ],
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/webasyst/waslidemenu/blob/master/MIT-LICENSE.txt"
+        }
+    ],
+    "bugs": "https://github.com/webasyst/waslidemenu/issues",
+    "homepage": "https://github.com/webasyst/waslidemenu",
+    "docs": "https://github.com/webasyst/waslidemenu",
+    "download": "https://github.com/webasyst/waslidemenu",
+    "dependencies": {
+        "jquery": ">=1.7"
+    }
+}
