@@ -4,7 +4,7 @@ jQuery plugin, that makes your big nested menu compact nad cool. Like this one: 
 
 ## Examples
 
-* http://jsfiddle.net/kerstvo/7LnSY
+* http://jsfiddle.net/kerstvo/7LnSY/4/
 * https://demo1.webasyst.com/?set_force_theme=default
 
 ## Options
