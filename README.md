@@ -1,289 +1,318 @@
 # waSlideMenu
 
-jQuery плагин, который делает скучное и объёмное многоуровневое меню, удобным и компактным. Прототип: https://www.facebook.com/help.
+jQuery plugin, that makes your big nested menu compact nad cool. Like this one: https://www.facebook.com/help.
 
-### Опции
+## Examples
 
-#### Скорость слайда
+* http://jsfiddle.net/kerstvo/7LnSY
+* https://demo1.webasyst.com/?set_force_theme=default
 
-```javascript
-$('#menu').waSlideMenu({
-	slideSpeed: 500
-});
-```
+## Options
 
-По умолчанию ```400```.
-
-#### Эффект слайда
+#### Slide speed
 
 ```javascript
 $('#menu').waSlideMenu({
-	slideEasing: 'linear'
+    slideSpeed: 500
 });
 ```
 
-#### Контент для ссылки "Назад"
+By default ```400```.
+
+#### Slide effect
 
 ```javascript
 $('#menu').waSlideMenu({
-	backLinkContent: 'Take me back, sir.'
+    slideEasing: 'linear'
 });
 ```
 
-По умолчанию ```Back```.
-
-#### Выбор расположения ссылки назад
+#### Backlink word
 
 ```javascript
 $('#menu').waSlideMenu({
-	backOntTop: true
+    backLinkContent: 'Take me back, sir.'
 });
 ```
 
-По умолчанию ```false```.
+By default ```Back```.
 
-#### Класс для "текущего" пункта меню
+#### Choose place for backlink (before or after menu)
 
 ```javascript
 $('#menu').waSlideMenu({
-	selectedClass: 'selected-menu'
+    backOntTop: true
 });
 ```
-По умолчанию ```'selected'```.
 
-#### Селектор контейнера, куда загружать контент "текущего" пункта меню
+By default ```false``` - that means 'after' menu.
+
+#### Class for current selected menu element
 
 ```javascript
 $('#menu').waSlideMenu({
-	loadContainer : '#content'
+    selectedClass: 'selected-menu'
 });
 ```
-По умолчанию ```''```, то есть ничего не загружается.
 
-#### Минимальная высота меню
+By default ```'selected'```.
+
+#### Container selecter, where plugin will load content from menu item url
 
 ```javascript
 $('#menu').waSlideMenu({
-	minHeightMenu : 400
+    loadContainer : '#content'
 });
 ```
-По умолчанию ```0```, то есть высота может быть любой.
 
-#### Автоматическая подстройка под размер меню
+By default ```''``` - nothing is loading.
+
+#### Minimum menu height
 
 ```javascript
 $('#menu').waSlideMenu({
-	autoHeightMenu : true
+    minHeightMenu : 400
 });
 ```
-По умолчанию ```true```, высота меню подстраивается под высоту текущего подменю.
 
-#### URL исключения (не буду загружаться по ссылкам из меню)
+By default ```0``` - no min-height.
+
+#### Menu auto height 
 
 ```javascript
 $('#menu').waSlideMenu({
-	excludeUri : ['/dont-load/', '#pleasedontloadme']
+    autoHeightMenu : true
 });
 ```
-Адреса ```'/dont-load/'``` и ```'#pleasedontloadme'``` не будут подгружаться в ```loadContainer```. По умолчанию ```['/', '#']```. 
 
-#### Подгружать контент только последних пунктов меню
+By default ```true```, menu height will adjusts for its content.
+
+#### URL exception
 
 ```javascript
 $('#menu').waSlideMenu({
-	loadOnlyLatest : true
+    excludeUri : ['/dont-load/', '#pleasedontloadme']
 });
 ```
-По умолчанию ```false```. Если установлено в ```true```, то меню будет прокурчиваться, не загружая ссылки, пока мы не дойдем до крайнего пункта меню.
 
-#### Селектор меню
+URLs ```'/dont-load/'``` and ```'#pleasedontloadme'``` will not load in ```loadContainer```. By default ```['/', '#']```. 
+
+#### Load content only latest nested menu items
 
 ```javascript
 $('#menu').waSlideMenu({
-	menuSelector : '.i-am-menu'
+    loadOnlyLatest : true
 });
 ```
-По умолчанию ```'ul'```.
 
-#### Селектор пунктов меню
+By default ```false```. If set to ```true```, then menus will slide without loading content until it reached latest menu item.
+
+#### Menu selector
 
 ```javascript
 $('#menu').waSlideMenu({
-	itemSelector : '.i-am-menu-item'
+    menuSelector : '.i-am-menu'
 });
 ```
-По умолчанию ```'li'```.
 
-#### Устанавливать title для страницы (из атрибута меню title)
+By default ```'ul'```.
+
+#### Menu item selector
 
 ```javascript
 $('#menu').waSlideMenu({
-	setTitle : true
+    itemSelector : '.i-am-menu-item'
 });
 ```
-По умолчанию ```false```. После загрузки url из пункта меню, устанавливается Title страницы, как в атрибуте title ссылки из пункта меню.
 
-#### Скорость прокрутки страницы вверх до "текущего" пункта меню
+By default ```'li'```.
+
+#### Title for page
 
 ```javascript
 $('#menu').waSlideMenu({
-	scrollToTopSpeed : 100
+    setTitle : true
 });
 ```
-По умолчанию ```0```. Возникают моменты, когда после слайда к следующему подменю его пункты пропадают из видимой области. В этом случае страница прокрутиться наверх, до выбранного пункта меню.
+
+By default ```false```. After menu item URL loading will set Title tag like menu item link text.
+
+#### Speed of slide up to current menu item
+
+```javascript
+$('#menu').waSlideMenu({
+    scrollToTopSpeed : 100
+});
+```
+
+By default ```0```. 
+Sometimes after sliding to nested menu or back menu items disappear from visible area. In this case page will slide up to current menu item (selected item).
 
 #### Callbacks
 
-##### После инициализации
+##### After plugin initialization
 
 ```javascript
 $('#menu').waSlideMenu({
-	onInit : function(){
-		alert('Here I am!');
-	}
+    onInit : function(){
+        alert('Here I am!');
+    }
 });
 ```
 
-##### После слайда на следующее подменю
+##### After slide to nested menu
 
 ```javascript
 $('#menu').waSlideMenu({
     onSlideForward : function(){
-		alert('I slide forward (deeper)!');
-	}
+        alert('I slide forward (deeper)!');
+    }
 });
 ```
 
-##### После слайда на меню уровнем выше
+##### After slide back
 
 ```javascript
 $('#menu').waSlideMenu({
     onSlideBack : function(){
-		alert('I slide back (bubling)!');
-	}
+        alert('I slide back (bubling)!');
+    }
 });
 ```
 
-##### После завершения прокрутки
+##### After sliding completed
 
 ```javascript
 $('#menu').waSlideMenu({
     afterSlide : function(){
-		alert('Yep! I just slide!!');
-	}
+        alert('Yep! I just slide!!');
+    }
 });
 ```
 
-##### Всегда, незвасимо от результат загрузки URL
+##### After load URL (always)
 
 ```javascript
 $('#menu').waSlideMenu({
     afterLoadAlways : function(){
-		alert('You URL request just completed!');
-	}
+        alert('You URL request just completed!');
+    }
 });
 ```
 
-##### После успешной загрузки URL
+##### After success load
 
 ```javascript
 $('#menu').waSlideMenu({
     afterLoadDone : function(){
-		alert('Nice URL! 200 OK!');
-	}
+        alert('Nice URL! 200 OK!');
+    }
 });
 ```
 
-##### После провальной загрузки URL
+##### After fail load
 
 ```javascript
 $('#menu').waSlideMenu({
     afterLoadFail : function(){
-		alert('Bad URL :(');
-	}
+        alert('Bad URL :(');
+    }
 });
 ```
 
 #### Event triggers
 
-Так же доступны следующие события ```onInit.waSlideMenu```, ```afterLoadDone.waSlideMenu```, ```afterLoadFail.waSlideMenu```, ```afterLoadAlways.waSlideMenu```.
+Also available next event triggers:  ```onInit.waSlideMenu```, ```afterLoadDone.waSlideMenu```, ```afterLoadFail.waSlideMenu```, ```afterLoadAlways.waSlideMenu```.
 
 ```javascript
 $('#menu').on('onInit.waSlideMenu', function(){
-	alert('After INIT waSlideMenu Event');
+    alert('After INIT waSlideMenu Event');
 }).on('afterLoadDone.waSlideMenu', function(){
-	alert('After URL load success Event');
+    alert('After URL load success Event');
 }).on('afterLoadFail.waSlideMenu', function(){
-	alert('After URL load fails Event');
+    alert('After URL load fails Event');
 }).on('afterLoadAlways.waSlideMenu', function(){
-	alert('After URL request completed Event');
+    alert('After URL request completed Event');
 });
 ```
 
-### И еще раз
+### One more thing
 
-* Не зависит от тегов, главное чтобы меню было вложенным
-
-```html
-<ul>
-	<li>
-		<a href="#1">1</a>
-		<ul>
-			<li><a href="#1.1">1.1</a></li>
-			<li><a href="#1.2">1.2</a></li>
-		</ul>
-		<li><a href="#2">2</a></li>
-		<li><a href="#3">3</a></li>
-	</li>
-</ul>
-```
-```javascript
-$('#menu').waSlideMenu({});
-```
+* Doesn't depends on html tags. Depends on structure.
 
 ```html
-<div class="menu">
-	<div class="item">
-		<a href="#1">1</a>
-		<div class="menu">
-			<div class="item"><a href="#1.1">1.1</a></li>
-			<div class="item"><a href="#1.2">1.2</a></li>
-		</div class="menu">
-		<div class="item"><a href="#2">2</a></li>
-		<div class="item"><a href="#3">3</a></li>
-	</li>
-</ul>
-```
-```javascript
-$('#menu').waSlideMenu({
-	menuSelector : '.menu',
-    itemSelector : '.item'
-});
+<nav id="menu">
+    <ul>
+        <li>
+            <a href="#1">1</a>
+            <ul>
+                <li><a href="#1.1">1.1</a></li>
+                <li><a href="#1.2">1.2</a></li>
+            </ul>
+            <li><a href="#2">2</a></li>
+            <li><a href="#3">3</a></li>
+        </li>
+    </ul>
+</nav>
+<script>
+    $(document).ready(function() {
+        $('#menu').waSlideMenu({});
+    });
+</script>
 ```
 
-* Опции и сallback можно устанваливать после инициализации плагина
+```html
+<nav id="menu">
+    <div class="menu">
+        <div class="item">
+            <a href="#1">1</a>
+            <div class="menu">
+                <div class="item"><a href="#1.1">1.1</a></div>
+                <div class="item"><a href="#1.2">1.2</a></div>
+            </div class="menu">
+            <div class="item"><a href="#2">2</a></div>
+            <div class="item"><a href="#3">3</a></div>
+        </div>
+    </div>
+</nav>
+<script>
+    $('#menu').waSlideMenu({
+        menuSelector : '.menu',
+        itemSelector : '.item'
+    });
+</script>
+```
+
+* Options and callbacks can be set after initialization
 
 ```javascript
 var slidemenu = $('#menu').waSlideMenu({});
 slidemenu.waSlideMenu({
-	slideSpeed : 3000, // veeeeeeeery smooooooth
-	afterSlide : function(){
-		alert('Yeah!!11 This was coooool smoooth sliiide!');
-	}
+    slideSpeed : 3000, // veeeeeeeery smooooooth
+    afterSlide : function(){
+        alert('Yeah!!11 This was coooool smoooth sliiide!');
+    }
 });
 ```
 
-* На одной странице может быть сколько угодно меню
+* On one page you can set as many menus as you wish
+
+* You can destroy menu (are you sure? :( )
+
+```javascript
+$('#menu').waSlideMenu('exec','destroy');
+```
 
 
-## Установка
+## Setup
 
-Добавьте файл стилей
+Css file
+
 ```html
 <link rel="stylesheet" href="/path/to/waslidemenu.css">
 ```
 
-И js файлы *после* библиотеки jQuery:
+And js file *after* jQuery (> 1.7):
 
 ```html
 <script src="jquery.js" type="text/javascript"></script>
@@ -296,9 +325,17 @@ $(document).ready(function(){
 });
 ```
 
-## Совместимость
+## Dependencies
+
+* > jQuery 1.7
+
+## Compatibility
 
 * IE9+
 * Google Chrome
 * Firefox
-* надо еще потестировать...
+* need feedback...
+
+## Issues
+
+Please write here: https://github.com/webasyst/waslidemenu/issues
