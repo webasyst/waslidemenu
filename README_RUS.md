@@ -4,8 +4,8 @@ jQuery плагин, который делает скучное и объёмн�
 
 ### Примеры
 
-* http://jsfiddle.net/kerstvo/7LnSY/4/
-* http://demo-ru.webasyst.com
+* [jsfiddle](http://jsfiddle.net/7LnSY/)
+* [меню Shop-Script](http://demo-ru.webasyst.com)
 
 ## Опции
 
