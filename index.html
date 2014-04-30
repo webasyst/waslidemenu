@@ -1,0 +1,388 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Waslidemenu by webasyst</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/webasyst/waslidemenu">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/webasyst/waslidemenu/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/webasyst/waslidemenu/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Waslidemenu</h1>
+          <p>Makes you website menu slide like a pro</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/webasyst">webasyst</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>
+<a name="waslidemenu" class="anchor" href="#waslidemenu"><span class="octicon octicon-link"></span></a>waSlideMenu</h1>
+
+<p>jQuery plugin, that makes your big nested menu compact nad cool. Like this one: <a href="https://www.facebook.com/help">https://www.facebook.com/help</a>.</p>
+
+<h2>
+<a name="examples" class="anchor" href="#examples"><span class="octicon octicon-link"></span></a>Examples</h2>
+
+<ul>
+<li><a href="http://jsfiddle.net/kerstvo/7LnSY/4/">http://jsfiddle.net/kerstvo/7LnSY/4/</a></li>
+<li><a href="https://demo1.webasyst.com/?set_force_theme=default">https://demo1.webasyst.com/?set_force_theme=default</a></li>
+</ul><h2>
+<a name="options" class="anchor" href="#options"><span class="octicon octicon-link"></span></a>Options</h2>
+
+<h4>
+<a name="slide-speed" class="anchor" href="#slide-speed"><span class="octicon octicon-link"></span></a>Slide speed</h4>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#menu'</span><span class="p">).</span><span class="nx">waSlideMenu</span><span class="p">({</span>
+    <span class="nx">slideSpeed</span><span class="o">:</span> <span class="mi">500</span>
+<span class="p">});</span>
+</pre></div>
+
+<p>By default <code>400</code>.</p>
+
+<h4>
+<a name="slide-effect" class="anchor" href="#slide-effect"><span class="octicon octicon-link"></span></a>Slide effect</h4>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#menu'</span><span class="p">).</span><span class="nx">waSlideMenu</span><span class="p">({</span>
+    <span class="nx">slideEasing</span><span class="o">:</span> <span class="s1">'linear'</span>
+<span class="p">});</span>
+</pre></div>
+
+<h4>
+<a name="backlink-word" class="anchor" href="#backlink-word"><span class="octicon octicon-link"></span></a>Backlink word</h4>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#menu'</span><span class="p">).</span><span class="nx">waSlideMenu</span><span class="p">({</span>
+    <span class="nx">backLinkContent</span><span class="o">:</span> <span class="s1">'Take me back, sir.'</span>
+<span class="p">});</span>
+</pre></div>
+
+<p>By default <code>Back</code>.</p>
+
+<h4>
+<a name="choose-place-for-backlink-before-or-after-menu" class="anchor" href="#choose-place-for-backlink-before-or-after-menu"><span class="octicon octicon-link"></span></a>Choose place for backlink (before or after menu)</h4>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#menu'</span><span class="p">).</span><span class="nx">waSlideMenu</span><span class="p">({</span>
+    <span class="nx">backOntTop</span><span class="o">:</span> <span class="kc">true</span>
+<span class="p">});</span>
+</pre></div>
+
+<p>By default <code>false</code> - that means 'after' menu.</p>
+
+<h4>
+<a name="class-for-current-selected-menu-element" class="anchor" href="#class-for-current-selected-menu-element"><span class="octicon octicon-link"></span></a>Class for current selected menu element</h4>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#menu'</span><span class="p">).</span><span class="nx">waSlideMenu</span><span class="p">({</span>
+    <span class="nx">selectedClass</span><span class="o">:</span> <span class="s1">'selected-menu'</span>
+<span class="p">});</span>
+</pre></div>
+
+<p>By default <code>'selected'</code>.</p>
+
+<h4>
+<a name="container-selecter-where-plugin-will-load-content-from-menu-item-url" class="anchor" href="#container-selecter-where-plugin-will-load-content-from-menu-item-url"><span class="octicon octicon-link"></span></a>Container selecter, where plugin will load content from menu item url</h4>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#menu'</span><span class="p">).</span><span class="nx">waSlideMenu</span><span class="p">({</span>
+    <span class="nx">loadContainer</span> <span class="o">:</span> <span class="s1">'#content'</span>
+<span class="p">});</span>
+</pre></div>
+
+<p>By default <code>''</code> - nothing is loading.</p>
+
+<h4>
+<a name="minimum-menu-height" class="anchor" href="#minimum-menu-height"><span class="octicon octicon-link"></span></a>Minimum menu height</h4>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#menu'</span><span class="p">).</span><span class="nx">waSlideMenu</span><span class="p">({</span>
+    <span class="nx">minHeightMenu</span> <span class="o">:</span> <span class="mi">400</span>
+<span class="p">});</span>
+</pre></div>
+
+<p>By default <code>0</code> - no min-height.</p>
+
+<h4>
+<a name="menu-auto-height" class="anchor" href="#menu-auto-height"><span class="octicon octicon-link"></span></a>Menu auto height</h4>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#menu'</span><span class="p">).</span><span class="nx">waSlideMenu</span><span class="p">({</span>
+    <span class="nx">autoHeightMenu</span> <span class="o">:</span> <span class="kc">true</span>
+<span class="p">});</span>
+</pre></div>
+
+<p>By default <code>true</code>, menu height will adjusts for its content.</p>
+
+<h4>
+<a name="url-exception" class="anchor" href="#url-exception"><span class="octicon octicon-link"></span></a>URL exception</h4>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#menu'</span><span class="p">).</span><span class="nx">waSlideMenu</span><span class="p">({</span>
+    <span class="nx">excludeUri</span> <span class="o">:</span> <span class="p">[</span><span class="s1">'/dont-load/'</span><span class="p">,</span> <span class="s1">'#pleasedontloadme'</span><span class="p">]</span>
+<span class="p">});</span>
+</pre></div>
+
+<p>URLs <code>'/dont-load/'</code> and <code>'#pleasedontloadme'</code> will not load in <code>loadContainer</code>. By default <code>['/', '#']</code>. </p>
+
+<h4>
+<a name="load-content-only-latest-nested-menu-items" class="anchor" href="#load-content-only-latest-nested-menu-items"><span class="octicon octicon-link"></span></a>Load content only latest nested menu items</h4>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#menu'</span><span class="p">).</span><span class="nx">waSlideMenu</span><span class="p">({</span>
+    <span class="nx">loadOnlyLatest</span> <span class="o">:</span> <span class="kc">true</span>
+<span class="p">});</span>
+</pre></div>
+
+<p>By default <code>false</code>. If set to <code>true</code>, then menus will slide without loading content until it reached latest menu item.</p>
+
+<h4>
+<a name="menu-selector" class="anchor" href="#menu-selector"><span class="octicon octicon-link"></span></a>Menu selector</h4>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#menu'</span><span class="p">).</span><span class="nx">waSlideMenu</span><span class="p">({</span>
+    <span class="nx">menuSelector</span> <span class="o">:</span> <span class="s1">'.i-am-menu'</span>
+<span class="p">});</span>
+</pre></div>
+
+<p>By default <code>'ul'</code>.</p>
+
+<h4>
+<a name="menu-item-selector" class="anchor" href="#menu-item-selector"><span class="octicon octicon-link"></span></a>Menu item selector</h4>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#menu'</span><span class="p">).</span><span class="nx">waSlideMenu</span><span class="p">({</span>
+    <span class="nx">itemSelector</span> <span class="o">:</span> <span class="s1">'.i-am-menu-item'</span>
+<span class="p">});</span>
+</pre></div>
+
+<p>By default <code>'li'</code>.</p>
+
+<h4>
+<a name="title-for-page" class="anchor" href="#title-for-page"><span class="octicon octicon-link"></span></a>Title for page</h4>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#menu'</span><span class="p">).</span><span class="nx">waSlideMenu</span><span class="p">({</span>
+    <span class="nx">setTitle</span> <span class="o">:</span> <span class="kc">true</span>
+<span class="p">});</span>
+</pre></div>
+
+<p>By default <code>false</code>. After menu item URL loading will set Title tag like menu item link text.</p>
+
+<h4>
+<a name="speed-of-slide-up-to-current-menu-item" class="anchor" href="#speed-of-slide-up-to-current-menu-item"><span class="octicon octicon-link"></span></a>Speed of slide up to current menu item</h4>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#menu'</span><span class="p">).</span><span class="nx">waSlideMenu</span><span class="p">({</span>
+    <span class="nx">scrollToTopSpeed</span> <span class="o">:</span> <span class="mi">100</span>
+<span class="p">});</span>
+</pre></div>
+
+<p>By default <code>0</code>. 
+Sometimes after sliding to nested menu or back menu items disappear from visible area. In this case page will slide up to current menu item (selected item).</p>
+
+<h4>
+<a name="callbacks" class="anchor" href="#callbacks"><span class="octicon octicon-link"></span></a>Callbacks</h4>
+
+<h5>
+<a name="after-plugin-initialization" class="anchor" href="#after-plugin-initialization"><span class="octicon octicon-link"></span></a>After plugin initialization</h5>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#menu'</span><span class="p">).</span><span class="nx">waSlideMenu</span><span class="p">({</span>
+    <span class="nx">onInit</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s1">'Here I am!'</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+<h5>
+<a name="after-slide-to-nested-menu" class="anchor" href="#after-slide-to-nested-menu"><span class="octicon octicon-link"></span></a>After slide to nested menu</h5>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#menu'</span><span class="p">).</span><span class="nx">waSlideMenu</span><span class="p">({</span>
+    <span class="nx">onSlideForward</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s1">'I slide forward (deeper)!'</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+<h5>
+<a name="after-slide-back" class="anchor" href="#after-slide-back"><span class="octicon octicon-link"></span></a>After slide back</h5>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#menu'</span><span class="p">).</span><span class="nx">waSlideMenu</span><span class="p">({</span>
+    <span class="nx">onSlideBack</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s1">'I slide back (bubling)!'</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+<h5>
+<a name="after-sliding-completed" class="anchor" href="#after-sliding-completed"><span class="octicon octicon-link"></span></a>After sliding completed</h5>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#menu'</span><span class="p">).</span><span class="nx">waSlideMenu</span><span class="p">({</span>
+    <span class="nx">afterSlide</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s1">'Yep! I just slide!!'</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+<h5>
+<a name="after-load-url-always" class="anchor" href="#after-load-url-always"><span class="octicon octicon-link"></span></a>After load URL (always)</h5>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#menu'</span><span class="p">).</span><span class="nx">waSlideMenu</span><span class="p">({</span>
+    <span class="nx">afterLoadAlways</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s1">'You URL request just completed!'</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+<h5>
+<a name="after-success-load" class="anchor" href="#after-success-load"><span class="octicon octicon-link"></span></a>After success load</h5>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#menu'</span><span class="p">).</span><span class="nx">waSlideMenu</span><span class="p">({</span>
+    <span class="nx">afterLoadDone</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s1">'Nice URL! 200 OK!'</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+<h5>
+<a name="after-fail-load" class="anchor" href="#after-fail-load"><span class="octicon octicon-link"></span></a>After fail load</h5>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#menu'</span><span class="p">).</span><span class="nx">waSlideMenu</span><span class="p">({</span>
+    <span class="nx">afterLoadFail</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s1">'Bad URL :('</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+<h4>
+<a name="event-triggers" class="anchor" href="#event-triggers"><span class="octicon octicon-link"></span></a>Event triggers</h4>
+
+<p>Also available next event triggers:  <code>onInit.waSlideMenu</code>, <code>afterLoadDone.waSlideMenu</code>, <code>afterLoadFail.waSlideMenu</code>, <code>afterLoadAlways.waSlideMenu</code>.</p>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#menu'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'onInit.waSlideMenu'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s1">'After INIT waSlideMenu Event'</span><span class="p">);</span>
+<span class="p">}).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'afterLoadDone.waSlideMenu'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s1">'After URL load success Event'</span><span class="p">);</span>
+<span class="p">}).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'afterLoadFail.waSlideMenu'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s1">'After URL load fails Event'</span><span class="p">);</span>
+<span class="p">}).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'afterLoadAlways.waSlideMenu'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s1">'After URL request completed Event'</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+
+<h3>
+<a name="one-more-thing" class="anchor" href="#one-more-thing"><span class="octicon octicon-link"></span></a>One more thing</h3>
+
+<ul>
+<li>Doesn't depends on html tags. Depends on structure.</li>
+</ul><div class="highlight highlight-html"><pre><span class="nt">&lt;nav</span> <span class="na">id=</span><span class="s">"menu"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#1"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/a&gt;</span>
+            <span class="nt">&lt;ul&gt;</span>
+                <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#1.1"</span><span class="nt">&gt;</span>1.1<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+                <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#1.2"</span><span class="nt">&gt;</span>1.2<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;/ul&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#2"</span><span class="nt">&gt;</span>2<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#3"</span><span class="nt">&gt;</span>3<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/nav&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+    <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">'#menu'</span><span class="p">).</span><span class="nx">waSlideMenu</span><span class="p">({});</span>
+    <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;nav</span> <span class="na">id=</span><span class="s">"menu"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"menu"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#1"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/a&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"menu"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#1.1"</span><span class="nt">&gt;</span>1.1<span class="nt">&lt;/a&gt;&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#1.2"</span><span class="nt">&gt;</span>1.2<span class="nt">&lt;/a&gt;&lt;/div&gt;</span>
+            <span class="err">&lt;</span>/div class="menu"&gt;
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#2"</span><span class="nt">&gt;</span>2<span class="nt">&lt;/a&gt;&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#3"</span><span class="nt">&gt;</span>3<span class="nt">&lt;/a&gt;&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/nav&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">'#menu'</span><span class="p">).</span><span class="nx">waSlideMenu</span><span class="p">({</span>
+        <span class="nx">menuSelector</span> <span class="o">:</span> <span class="s1">'.menu'</span><span class="p">,</span>
+        <span class="nx">itemSelector</span> <span class="o">:</span> <span class="s1">'.item'</span>
+    <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+
+<ul>
+<li>Options and callbacks can be set after initialization</li>
+</ul><div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">slidemenu</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#menu'</span><span class="p">).</span><span class="nx">waSlideMenu</span><span class="p">({});</span>
+<span class="nx">slidemenu</span><span class="p">.</span><span class="nx">waSlideMenu</span><span class="p">({</span>
+    <span class="nx">slideSpeed</span> <span class="o">:</span> <span class="mi">3000</span><span class="p">,</span> <span class="c1">// veeeeeeeery smooooooth</span>
+    <span class="nx">afterSlide</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s1">'Yeah!!11 This was coooool smoooth sliiide!'</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+<ul>
+<li><p>On one page you can set as many menus as you wish</p></li>
+<li><p>You can destroy menu (are you sure? :( )</p></li>
+</ul><div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#menu'</span><span class="p">).</span><span class="nx">waSlideMenu</span><span class="p">(</span><span class="s1">'exec'</span><span class="p">,</span><span class="s1">'destroy'</span><span class="p">);</span>
+</pre></div>
+
+<h2>
+<a name="setup" class="anchor" href="#setup"><span class="octicon octicon-link"></span></a>Setup</h2>
+
+<p>Css file</p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/path/to/waslidemenu.css"</span><span class="nt">&gt;</span>
+</pre></div>
+
+<p>And js file <em>after</em> jQuery (&gt; 1.7):</p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/path/to/jquery.waslidemenu.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+   <span class="nx">$</span><span class="p">(</span><span class="nx">menu</span><span class="o">-</span><span class="nx">selector</span><span class="p">).</span><span class="nx">waSlideMenu</span><span class="p">({});</span>
+<span class="p">});</span>
+</pre></div>
+
+<h2>
+<a name="dependencies" class="anchor" href="#dependencies"><span class="octicon octicon-link"></span></a>Dependencies</h2>
+
+<ul>
+<li>&gt; jQuery 1.7</li>
+</ul><h2>
+<a name="compatibility" class="anchor" href="#compatibility"><span class="octicon octicon-link"></span></a>Compatibility</h2>
+
+<ul>
+<li>IE9+</li>
+<li>Google Chrome</li>
+<li>Firefox</li>
+<li>need feedback...</li>
+</ul><h2>
+<a name="issues" class="anchor" href="#issues"><span class="octicon octicon-link"></span></a>Issues</h2>
+
+<p>Please write here: <a href="https://github.com/webasyst/waslidemenu/issues">https://github.com/webasyst/waslidemenu/issues</a></p>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
