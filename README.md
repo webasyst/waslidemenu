@@ -1,6 +1,6 @@
 # waSlideMenu
 
-jQuery plugin, that turns big nested (hierarchical) tree into a cool multi-level sliding menu. MIT license.
+jQuery plugin that turns big nested (hierarchical) tree into a cool multi-level sliding menu. MIT license.
 
 ## Demo
 
@@ -22,7 +22,7 @@ Link JS *after* jQuery (> 1.7):
 <script src="/path/to/jquery.waslidemenu.js" type="text/javascript"></script>
 ```
 
-Set HTML
+Prepare your HTML
 
 ```html
 <nav id="mymenu">
@@ -302,7 +302,7 @@ $('#menu').on('onInit.waSlideMenu', function(){
 
 ## One more thing
 
-* Doesn't depends on HTML tags, depends on structure. I.e can be used on DIVs.
+* Doesn't depends on HTML tags. Depends on structure.
 
 ```html
 <nav id="menu">
@@ -338,9 +338,9 @@ slidemenu.waSlideMenu({
 });
 ```
 
-* On one page you can set as many menus as you wish
+* On one page you can set as many sliding menus as you wish
 
-* Can destroy menu any time (are you sure? :( )
+* Can destroy menu at any time (are you sure? :( )
 
 ```javascript
 $('#menu').waSlideMenu('exec','destroy');
