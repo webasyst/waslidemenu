@@ -5,7 +5,7 @@ jQuery plugin that turns big nested (hierarchical) tree into a cool multi-level 
 ## Demo
 
 * [JSFiddle](http://jsfiddle.net/7LnSY/)
-* [demo1.webasyst.com](https://demo1.webasyst.com/?set_force_theme=default&theme_hash=fe01ce2a7fbac8fafaed7c982a04e229)
+* [demo.webasyst.com](http://demo.webasyst.com/?set_force_theme=default&theme_hash=fe01ce2a7fbac8fafaed7c982a04e229)
 
 ## Usage
 
