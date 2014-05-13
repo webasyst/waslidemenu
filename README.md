@@ -1,12 +1,59 @@
 # waSlideMenu
 
-jQuery plugin, that makes your big nested menu compact nad cool. Like this one: https://www.facebook.com/help.
+jQuery plugin, that turns big nested (hierarchical) tree into a cool multi-level sliding menu. MIT license.
 
-## Examples
+## Demo
 
-* [jsfiddle](http://jsfiddle.net/7LnSY/)
+* [JSFiddle](http://jsfiddle.net/7LnSY/)
 * [demo1.webasyst.com](https://demo1.webasyst.com/?set_force_theme=default&theme_hash=fe01ce2a7fbac8fafaed7c982a04e229)
 
+## Usage
+
+Link CSS
+
+```html
+<link rel="stylesheet" href="/path/to/waslidemenu.css">
+```
+
+Link JS *after* jQuery (> 1.7):
+
+```html
+<script src="jquery.js" type="text/javascript"></script>
+<script src="/path/to/jquery.waslidemenu.js" type="text/javascript"></script>
+```
+
+Set HTML
+
+```html
+<nav id="mymenu">
+	<ul>
+		<li>
+			<a href="#1">Parent</a>
+			<ul>
+				<li>
+                    <a href="#1.1">Child</a>
+                    <ul>
+                    	<li>
+                    		<a href="#">We need to go deeper</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#1.2">Child</a></li>
+            </ul>
+        </li>
+        <li><a href="#2">Parent</a></li>
+        <li><a href="#3">Parent</a></li>
+    </ul>
+</nav>
+```
+
+Init the awesome
+
+```javascript
+$(document).ready(function(){
+   $('#mymenu').waSlideMenu({});
+});
+```
 
 ## Options
 
@@ -253,30 +300,9 @@ $('#menu').on('onInit.waSlideMenu', function(){
 });;
 ```
 
-### One more thing
+## One more thing
 
-* Doesn't depends on html tags. Depends on structure.
-
-```html
-<nav id="menu">
-    <ul>
-        <li>
-            <a href="#1">1</a>
-            <ul>
-                <li><a href="#1.1">1.1</a></li>
-                <li><a href="#1.2">1.2</a></li>
-            </ul>
-            <li><a href="#2">2</a></li>
-            <li><a href="#3">3</a></li>
-        </li>
-    </ul>
-</nav>
-<script>
-    $(document).ready(function() {
-        $('#menu').waSlideMenu({});
-    });
-</script>
-```
+* Doesn't depends on HTML tags, depends on structure. I.e can be used on DIVs.
 
 ```html
 <nav id="menu">
@@ -286,10 +312,10 @@ $('#menu').on('onInit.waSlideMenu', function(){
             <div class="menu">
                 <div class="item"><a href="#1.1">1.1</a></div>
                 <div class="item"><a href="#1.2">1.2</a></div>
-            </div class="menu">
-            <div class="item"><a href="#2">2</a></div>
-            <div class="item"><a href="#3">3</a></div>
+            </div>
         </div>
+        <div class="item"><a href="#2">2</a></div>
+        <div class="item"><a href="#3">3</a></div>        
     </div>
 </nav>
 <script>
@@ -300,7 +326,7 @@ $('#menu').on('onInit.waSlideMenu', function(){
 </script>
 ```
 
-* Options and callbacks can be set after initialization
+* Options and callbacks can be set after the initialization
 
 ```javascript
 var slidemenu = $('#menu').waSlideMenu({});
@@ -314,32 +340,10 @@ slidemenu.waSlideMenu({
 
 * On one page you can set as many menus as you wish
 
-* You can destroy menu (are you sure? :( )
+* Can destroy menu any time (are you sure? :( )
 
 ```javascript
 $('#menu').waSlideMenu('exec','destroy');
-```
-
-
-## Setup
-
-Css file
-
-```html
-<link rel="stylesheet" href="/path/to/waslidemenu.css">
-```
-
-And js file *after* jQuery (> 1.7):
-
-```html
-<script src="jquery.js" type="text/javascript"></script>
-<script src="/path/to/jquery.waslidemenu.js" type="text/javascript"></script>
-```
-
-```javascript
-$(document).ready(function(){
-   $(menu-selector).waSlideMenu({});
-});
 ```
 
 ## Dependencies
@@ -355,4 +359,4 @@ $(document).ready(function(){
 
 ## Issues
 
-Please write here: https://github.com/webasyst/waslidemenu/issues
+Welcome: https://github.com/webasyst/waslidemenu/issues
