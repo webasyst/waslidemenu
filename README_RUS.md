@@ -149,6 +149,8 @@ $('#menu').waSlideMenu({
 
 #### Callbacks
 
+Здесь ```this``` относится к плагину.
+
 ##### После инициализации
 
 ```javascript
@@ -188,6 +190,18 @@ $('#menu').waSlideMenu({
     }
 });
 ```
+
+##### После клика на крайнем элементе в дереве меню
+
+```javascript
+$('#menu').waSlideMenu({
+    onLatestClick : function(){
+        alert('Last element clicked: ' + $(this).text());
+    }
+});
+```
+
+Здесь ```this``` - это контекст элемента, на который кликнули.
 
 ##### Всегда, незвасимо от результат загрузки URL
 

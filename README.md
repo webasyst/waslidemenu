@@ -151,6 +151,8 @@ Sometimes after sliding to nested menu or back menu items disappear from visible
 
 #### Callbacks
 
+Here ```this``` - plugin instance.
+
 ##### After plugin initialization
 
 ```javascript
@@ -190,6 +192,18 @@ $('#menu').waSlideMenu({
     }
 });
 ```
+
+##### After click on last node element
+
+```javascript
+$('#menu').waSlideMenu({
+    onLatestClick : function(){
+        alert('Last element clicked: ' + $(this).text());
+    }
+});
+```
+
+Here ```this``` - clicked element.
 
 ##### After load URL (always)
 
@@ -234,7 +248,9 @@ $('#menu').on('onInit.waSlideMenu', function(){
     alert('After URL load fails Event');
 }).on('afterLoadAlways.waSlideMenu', function(){
     alert('After URL request completed Event');
-});
+}).on('onLatestClick.waSlideMenu', function(){
+    alert('On last node element click Event');
+});;
 ```
 
 ### One more thing
