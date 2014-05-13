@@ -9,19 +9,17 @@ jQuery-плагин, который превращает древовидное 
 
 ## Использование
 
-Добавьте файл стилей
+Подключите файл стилей
 ```html
 <link rel="stylesheet" href="/path/to/waslidemenu.css">
 ```
 
-И js файлы *после* библиотеки jQuery:
+И JS-файлы плагина *после* библиотеки jQuery:
 ```html
-<script src="jquery.js" type="text/javascript"></script>
 <script src="/path/to/jquery.waslidemenu.js" type="text/javascript"></script>
 ```
 
 Добавьте немного HTML
-```html
 ```html
 <nav id="mymenu">
 	<ul>
@@ -43,18 +41,12 @@ jQuery-плагин, который превращает древовидное 
         <li><a href="#3">Parent</a></li>
     </ul>
 </nav>
-<script>
-    $(document).ready(function() {
-        $('#mymenu').waSlideMenu({});
-    });
-</script>
 ```
 
-И запускайте плагин
-
+И запускайте!
 ```javascript
 $(document).ready(function(){
-   $(menu-selector).waSlideMenu({});
+   $('#mymenu').waSlideMenu({});
 });
 ```
 
