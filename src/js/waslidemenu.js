@@ -247,9 +247,9 @@
 
             // if this is backlink find by url
             if (back_link) {
-                base.$currentMenuElement = base.$waSlideMenu
-                    .find("[href='" + url + "']:first")
-                    .parent(base.o.itemSelector);
+                base.$currentMenuElement = base.$currentMenuElement
+                        .closest(base.o.menuSelector)
+                        .closest(base.o.itemSelector);
             }
             // add 'selected' class
             base.$currentMenuElement.addClass(base.o.selectedClass);
