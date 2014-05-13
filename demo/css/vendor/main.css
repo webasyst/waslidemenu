@@ -62,7 +62,7 @@ textarea {
    ========================================================================== */
 
 body {
-    font: 16px/26px Helvetica, Helvetica Neue, Arial;
+    font: 16px/26px 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .wrapper {
@@ -397,14 +397,15 @@ nav a:hover {
     MY
 ============== */
 .left {
-    padding: 0 20 px;
+    padding: 0 1%;
     float: left;
-    width: 50%;
+    width: 48%;
 }
 .parent:after {
     content: "\00bb";
     float: right;
     margin-right: 10px;
+    display: inline-block;
 }
 #learnjava {
     margin: 0 10px;
@@ -421,7 +422,31 @@ li {
     font-size: 14px;
 }
 li a {
-    display: block;
+    display: inline-block;
     text-decoration: none;
     padding: 2px 10px;
+    width: 85%;
+}
+
+#slidemenu1 ul {
+    margin: 0 0 20px;
+    padding: 0;
+}
+#slidemenu1 .collapsible {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAgCAYAAACinX6EAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAPxJREFUeNpi/P//P8NIBkwMIxyMBsBoAIxwwEILQxkZGUlSP5AFMS1TgMpIzwISQFw2kgPgCBBfAOK8kVwI7gLi+0CcNZJrgc1A/AqIk0ZyNbgGiH8CcfRIbgcsBWIuIA4ayQ2h2UAsBcS+I7klOAXaRnAbyU3hfiA2AmKbkdwX+DeSU0AhtJF0ZCQGAKhRdAfaSBpxKQDUGHoBbRyNuFogGtoYWjcS2wGgxg87tDE04lqCvtCu8byR2BcANXYUgXjaSOwNgho5BkA8aTCPBzDSYjwOOiYoD8QPiVE/kGOCtAwAosFABgBNRoWH0nTb6MTIaACMBsDIBgABBgA88i/oqGpRJgAAAABJRU5ErkJggg==) no-repeat;
+    background-position: 100% 50%;
+    background-size: 32px 16px;
+    background-color: rgba(0,0,0,0.04);
+}
+#slidemenu1 li {
+    list-style: none;
+    padding: 0;
+    line-height: 1.3em;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    background-color: rgba(0,0,0,0.04);
+}
+#slidemenu1 a {
+    padding: 15px 26px 15px 16px;
+    display: block;
+    text-decoration: none;
 }
