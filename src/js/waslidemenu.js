@@ -176,47 +176,52 @@
                 }).html('&nbsp;'),
                 clear = '<div style="clear:both"></div>';
 
-            // TODO: (?) save content if we will fail load next page
-            // base.$currentContent = $load_container.html();
-            loadContainer.html(loading).append(clear);
-            $.ajax(
-                {
-                    url: url,
-                    type: 'get'
-                }
-            )
-                .done(function (data) {
-                    loadContainer.html(data + clear);
-                    // set page title
-                    base.changeTitle();
-                    // set new url
-                    base.changeUri(url);
-                    // afterLoadDone callback
-                    if (base.o.afterLoadDone && typeof (base.o.afterLoadDone) === 'function') {
-                        base.o.afterLoadDone(base);
-                    }
-                    base.$waSlideMenu.trigger('afterLoadDone.' + base.o.namespace + pluginName);
-                })
-                .fail(function () {
-                    // do not remove content and slide menu
-                    base.$currentMenuElement
-                        .siblings()
-                        .children('.' + base.o.classNames.menuItemBackClass)
-                        .trigger('click');
+            if (base.o.loadContainer.length > 0 && // check if we have place where load content
+                    loadContainer.length > 0 &&
+                    $.inArray(url, base.o.excludeUri) < 0 &&
+                    (location.origin + url) !== window.location.href) {
 
-                    // afterLoadFail callback
-                    if (base.o.afterLoadFail && typeof (base.o.afterLoadFail) === 'function') {
-                        base.o.afterLoadFail(base);
+                // TODO: (?) save content if we will fail load next page
+                loadContainer.html(loading).append(clear);
+                $.ajax(
+                    {
+                        url: url,
+                        type: 'get'
                     }
-                    base.$waSlideMenu.trigger('afterLoadFail.' + base.o.namespace + pluginName);
-                })
-                .always(function () {
-                    // afterLoadAlways callback
-                    if (base.o.afterLoadAlways && typeof (base.o.afterLoadAlways) === 'function') {
-                        base.o.afterLoadAlways(base);
-                    }
-                    base.$waSlideMenu.trigger('afterLoadAlways.' + base.o.namespace + pluginName);
-                });
+                )
+                    .done(function (data) {
+                        loadContainer.html(data + clear);
+                        // set page title
+                        base.changeTitle();
+                        // set new url
+                        base.changeUri(url);
+                        // afterLoadDone callback
+                        if (base.o.afterLoadDone && typeof (base.o.afterLoadDone) === 'function') {
+                            base.o.afterLoadDone(base);
+                        }
+                        base.$waSlideMenu.trigger('afterLoadDone.' + base.o.namespace + pluginName);
+                    })
+                    .fail(function () {
+                        // do not remove content and slide menu
+                        base.$currentMenuElement
+                            .siblings()
+                            .children('.' + base.o.classNames.menuItemBackClass)
+                            .trigger('click');
+
+                        // afterLoadFail callback
+                        if (base.o.afterLoadFail && typeof (base.o.afterLoadFail) === 'function') {
+                            base.o.afterLoadFail(base);
+                        }
+                        base.$waSlideMenu.trigger('afterLoadFail.' + base.o.namespace + pluginName);
+                    })
+                    .always(function () {
+                        // afterLoadAlways callback
+                        if (base.o.afterLoadAlways && typeof (base.o.afterLoadAlways) === 'function') {
+                            base.o.afterLoadAlways(base);
+                        }
+                        base.$waSlideMenu.trigger('afterLoadAlways.' + base.o.namespace + pluginName);
+                    });
+            }
         };
         base.changeTitle = function () {
             if (base.o.setTitle) {
@@ -245,7 +250,6 @@
                 .filter('.' + base.o.selectedClass)
                 .removeClass(base.o.selectedClass);
 
-            // if this is backlink find by url
             if (back_link) {
                 base.$currentMenuElement = base.$currentMenuElement
                         .closest(base.o.menuSelector)
@@ -253,13 +257,19 @@
             }
             // add 'selected' class
             base.$currentMenuElement.addClass(base.o.selectedClass);
+            
+            if (base.o.loadOnlyLatest === false) {
+                base.loadContent($load_container, url);
+            } else if (base.o.loadOnlyLatest && $menu_children.length === 0 && depth > 0) {
+                base.loadContent($load_container, url);
+            }
 
-            if (base.o.loadContainer.length > 0 && $load_container.length > 0 && $.inArray(url, base.o.excludeUri) < 0 && (location.origin + url) !== window.location.href) {
-                if (base.o.loadOnlyLatest === false) {
-                    base.loadContent($load_container, url);
-                } else if (base.o.loadOnlyLatest && $menu_children.length === 0 && depth > 0) {
-                    base.loadContent($load_container, url);
+            // onLatestClick callback
+            if ($menu_children.length === 0 && depth > 0) {
+                if (base.o.onLatestClick && typeof (base.o.onLatestClick) === 'function') {
+                    base.o.onLatestClick.apply(element);
                 }
+                base.$waSlideMenu.trigger('onLatestClick.' + base.o.namespace + pluginName);
             }
 
             // if we can go deeper or up
@@ -381,6 +391,7 @@
         onInit              : null,
         onSlideForward      : null,
         onSlideBack         : null,
+        onLatestClick       : null,
         afterSlide          : null,
         afterLoadAlways     : null,
         afterLoadDone       : null,
