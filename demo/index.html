@@ -1698,7 +1698,10 @@
     <script>
     $('#slidemenu1').waSlideMenu({
         autoHeightMenu: true,
-        scrollToTopSpeed: 200
+        scrollToTopSpeed: 200,
+        onLatestClick: function(){
+            alert('Last node ' + $(this).text() + ' selected')
+        }
     });
 
     $('#proglangenable').on('click', function() {
