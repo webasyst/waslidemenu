@@ -1,11 +1,62 @@
 # waSlideMenu
 
-jQuery плагин, который делает скучное и объёмное многоуровневое меню, удобным и компактным. Прототип: https://www.facebook.com/help.
+jQuery-плагин, который превращает древовидное (иерархическое) структуру в систему прокручивающихся меню.
 
-### Примеры
+## Примеры работы
 
-* [jsfiddle](http://jsfiddle.net/7LnSY/)
-* [меню Shop-Script](http://demo-ru.webasyst.com)
+* [JSFiddle](http://jsfiddle.net/7LnSY/)
+* [demo-ru.webasyst.com](http://demo-ru.webasyst.com/?set_force_theme=default&theme_hash=fe01ce2a7fbac8fafaed7c982a04e229)
+
+## Использование
+
+Добавьте файл стилей
+```html
+<link rel="stylesheet" href="/path/to/waslidemenu.css">
+```
+
+И js файлы *после* библиотеки jQuery:
+```html
+<script src="jquery.js" type="text/javascript"></script>
+<script src="/path/to/jquery.waslidemenu.js" type="text/javascript"></script>
+```
+
+Добавьте немного HTML
+```html
+```html
+<nav id="mymenu">
+	<ul>
+		<li>
+			<a href="#1">Parent</a>
+			<ul>
+				<li>
+                    <a href="#1.1">Child</a>
+                    <ul>
+                    	<li>
+                    		<a href="#">We need to go deeper</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#1.2">Child</a></li>
+            </ul>
+        </li>
+        <li><a href="#2">Parent</a></li>
+        <li><a href="#3">Parent</a></li>
+    </ul>
+</nav>
+<script>
+    $(document).ready(function() {
+        $('#mymenu').waSlideMenu({});
+    });
+</script>
+```
+
+И запускайте плагин
+
+```javascript
+$(document).ready(function(){
+   $(menu-selector).waSlideMenu({});
+});
+```
 
 ## Опции
 
@@ -255,37 +306,16 @@ $('#menu').on('onInit.waSlideMenu', function(){
 
 ```html
 <nav id="menu">
-    <ul>
-        <li>
-            <a href="#1">1</a>
-            <ul>
-                <li><a href="#1.1">1.1</a></li>
-                <li><a href="#1.2">1.2</a></li>
-            </ul>
-            <li><a href="#2">2</a></li>
-            <li><a href="#3">3</a></li>
-        </li>
-    </ul>
-</nav>
-<script>
-    $(document).ready(function() {
-        $('#menu').waSlideMenu({});
-    });
-</script>
-```
-
-```html
-<nav id="menu">
     <div class="menu">
         <div class="item">
             <a href="#1">1</a>
             <div class="menu">
                 <div class="item"><a href="#1.1">1.1</a></div>
                 <div class="item"><a href="#1.2">1.2</a></div>
-            </div class="menu">
-            <div class="item"><a href="#2">2</a></div>
-            <div class="item"><a href="#3">3</a></div>
+            </div>
         </div>
+        <div class="item"><a href="#2">2</a></div>
+        <div class="item"><a href="#3">3</a></div>
     </div>
 </nav>
 <script>
@@ -314,27 +344,6 @@ slidemenu.waSlideMenu({
 
 ```javascript
 $('#menu').waSlideMenu('exec','destroy');
-```
-
-
-## Установка
-
-Добавьте файл стилей
-```html
-<link rel="stylesheet" href="/path/to/waslidemenu.css">
-```
-
-И js файлы *после* библиотеки jQuery:
-
-```html
-<script src="jquery.js" type="text/javascript"></script>
-<script src="/path/to/jquery.waslidemenu.js" type="text/javascript"></script>
-```
-
-```javascript
-$(document).ready(function(){
-   $(menu-selector).waSlideMenu({});
-});
 ```
 
 ## Совместимость
