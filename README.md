@@ -210,7 +210,7 @@ $('#menu').waSlideMenu({
 });
 ```
 
-##### After slide to nested menu
+##### After slide to a child submenu
 
 ```javascript
 $('#menu').waSlideMenu({
@@ -220,7 +220,7 @@ $('#menu').waSlideMenu({
 });
 ```
 
-##### After slide back
+##### After slide back to top
 
 ```javascript
 $('#menu').waSlideMenu({
@@ -230,7 +230,7 @@ $('#menu').waSlideMenu({
 });
 ```
 
-##### After sliding completed
+##### After slide animation is completed
 
 ```javascript
 $('#menu').waSlideMenu({
@@ -284,7 +284,7 @@ $('#menu').waSlideMenu({
 
 #### Event triggers
 
-Also available next event triggers:  ```onInit.waSlideMenu```, ```afterLoadDone.waSlideMenu```, ```afterLoadFail.waSlideMenu```, ```afterLoadAlways.waSlideMenu```.
+Following event triggers are available:  ```onInit.waSlideMenu```, ```afterLoadDone.waSlideMenu```, ```afterLoadFail.waSlideMenu```, ```afterLoadAlways.waSlideMenu```.
 
 ```javascript
 $('#menu').on('onInit.waSlideMenu', function(){
