@@ -78,6 +78,7 @@
                 base.$waSlideMenu.css('min-height', base.o.minHeightMenu);
             }
             base.o.previousHeight = 0;
+            base.o.nowSliding = false;
         };
         // go to selected item
         base.gotoSelected = function (depth, animate) {
@@ -98,6 +99,7 @@
                 callback_slide(base);
             }
             if (animate) {
+                base.o.nowSliding = true;
                 base.$movable.animate(
                     {
                         'left': depth > 0 ? '-=' + amount + '%' : '+=' + amount + '%'
@@ -105,6 +107,7 @@
                     base.o.slideSpeed,
                     base.o.slideEasing,
                     function () {
+                        base.o.nowSliding = false;
                         base._scrollToTop(depth);
                         // afterSlide callback
                         if (base.o.afterSlide && typeof (base.o.afterSlide) === 'function') {
@@ -236,6 +239,10 @@
         base._menuItemClicked = function (element, event, depth) {
             event.preventDefault();
             event.stopPropagation();
+            // disable click while we are sliding to next menu
+            if (base.o.nowSliding) {
+                return false;
+            }
 
             base.$currentMenuElement = $(element).parent(base.o.itemSelector);
 
