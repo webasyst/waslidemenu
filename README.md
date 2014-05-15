@@ -1,6 +1,6 @@
 # waSlideMenu
 
-jQuery plugin that turns big nested (hierarchical) tree into a cool multi-level sliding menu. MIT license.
+jQuery plugin that turns big nested (hierarchical) trees into a cool looking multi-level sliding drill down menus. MIT license.
 
 ## Demo
 
