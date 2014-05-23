@@ -252,6 +252,18 @@ $('#menu').waSlideMenu({
 
 Here ```this``` - clicked element.
 
+##### Before load URL
+
+```javascript
+$('#menu').waSlideMenu({
+    beforeLoad : function(){
+        this.html('<img src="myloading.gif">');
+    }
+});
+```
+
+Executes before load starts (async). ```this``` - jQuery object of loadContainer.
+
 ##### After load URL (always)
 
 ```javascript

@@ -1,6 +1,6 @@
 /**
  * waSlideMenu - jQuery plugin for menu organization like Facebook Help Page.
- * @version v1.0.5
+ * @version v1.0.7
  * @link https://github.com/webasyst/waslidemenu
  * @license MIT
  */
@@ -190,8 +190,12 @@
                     $.inArray(url, base.o.excludeUri) < 0 &&
                     (location.origin + url) !== window.location.href) {
 
+                if (base.o.beforeLoad && typeof (base.o.beforeLoad) === 'function') {
+                    base.o.beforeLoad.apply(loadContainer);
+                } else {
+                    loadContainer.html(loading).append(clear);
+                }
                 // TODO: (?) save content if we will fail load next page
-                loadContainer.html(loading).append(clear);
                 $.ajax(
                     {
                         url: url,
@@ -206,7 +210,7 @@
                         base.changeUri(url);
                         // afterLoadDone callback
                         if (base.o.afterLoadDone && typeof (base.o.afterLoadDone) === 'function') {
-                            base.o.afterLoadDone(base);
+                            base.o.afterLoadDone.apply(loadContainer);
                         }
                         base.$waSlideMenu.trigger('afterLoadDone.' + base.o.namespace + pluginName);
                     })
@@ -219,14 +223,14 @@
 
                         // afterLoadFail callback
                         if (base.o.afterLoadFail && typeof (base.o.afterLoadFail) === 'function') {
-                            base.o.afterLoadFail(base);
+                            base.o.afterLoadFail.apply(loadContainer);
                         }
                         base.$waSlideMenu.trigger('afterLoadFail.' + base.o.namespace + pluginName);
                     })
                     .always(function () {
                         // afterLoadAlways callback
                         if (base.o.afterLoadAlways && typeof (base.o.afterLoadAlways) === 'function') {
-                            base.o.afterLoadAlways(base);
+                            base.o.afterLoadAlways.apply(loadContainer);
                         }
                         base.$waSlideMenu.trigger('afterLoadAlways.' + base.o.namespace + pluginName);
                     });
@@ -406,6 +410,7 @@
         onSlideBack         : null,
         onLatestClick       : null,
         afterSlide          : null,
+        beforeLoad          : null,
         afterLoadAlways     : null,
         afterLoadDone       : null,
         afterLoadFail       : null,
