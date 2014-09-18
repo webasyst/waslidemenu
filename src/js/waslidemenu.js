@@ -152,9 +152,9 @@
                         .closest(base.o.menuSelector)
                         .height();
                 }
-                if (depth < 0) { // if backwards - prevent previous height
-                    h = h > base.o.previousHeight ? h : base.o.previousHeight;
-                }
+                // if (depth < 0) { // if backwards - prevent previous height
+                //     h = h > base.o.previousHeight ? h : base.o.previousHeight;
+                // }
 
                 h = h > base.o.minHeightMenu ? h : base.o.minHeightMenu;
                 base.o.previousHeight = h;
@@ -268,7 +268,7 @@
             }
             // add 'selected' class
             base.$currentMenuElement.addClass(base.o.selectedClass);
-            
+
             if (base.o.loadOnlyLatest === false) {
                 base.loadContent($load_container, url);
             } else if (base.o.loadOnlyLatest && $menu_children.length === 0 && depth > 0) {
