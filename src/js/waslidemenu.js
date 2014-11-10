@@ -146,15 +146,15 @@
                         .children(base.o.menuSelector)
                         .height();
                     // if children menu height is lower then currentMenuElement offset
-                    h = h < to_currentmenuelement_h ? h = to_currentmenuelement_h : h;
+                    //h = h < to_currentmenuelement_h ? h = to_currentmenuelement_h : h;
                 } else { // height of current menu
                     h = base.$currentMenuElement
                         .closest(base.o.menuSelector)
                         .height();
                 }
-                if (depth < 0) { // if backwards - prevent previous height
-                    h = h > base.o.previousHeight ? h : base.o.previousHeight;
-                }
+                // if (depth < 0) { // if backwards - prevent previous height
+                //     h = h > base.o.previousHeight ? h : base.o.previousHeight;
+                // }
 
                 h = h > base.o.minHeightMenu ? h : base.o.minHeightMenu;
                 base.o.previousHeight = h;
@@ -268,7 +268,7 @@
             }
             // add 'selected' class
             base.$currentMenuElement.addClass(base.o.selectedClass);
-            
+
             if (base.o.loadOnlyLatest === false) {
                 base.loadContent($load_container, url);
             } else if (base.o.loadOnlyLatest && $menu_children.length === 0 && depth > 0) {
