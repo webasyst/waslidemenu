@@ -146,7 +146,7 @@
                         .children(base.o.menuSelector)
                         .height();
                     // if children menu height is lower then currentMenuElement offset
-                    h = h < to_currentmenuelement_h ? h = to_currentmenuelement_h : h;
+                    //h = h < to_currentmenuelement_h ? h = to_currentmenuelement_h : h;
                 } else { // height of current menu
                     h = base.$currentMenuElement
                         .closest(base.o.menuSelector)
